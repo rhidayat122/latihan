@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 
+Route::get('halaman/{id}', 'PrakerinController@param');
+Route::get('/{a}', 'PrakerinController@parameter');
 
 Route::get('/testmodel', function(){
 	$q = App\Blog::all();
@@ -39,3 +41,15 @@ Route::get('/pengaturan', function(){
 	$penggatur = App\pengaturan::all();
 	return $penggatur;
 });
+
+
+
+//latihan Controller
+//controller digunakan sebagai pengatur alur program
+
+Route::get('','PrakerinController@percobaan');
+Route::get('/test2','PrakerinController@sepakbola');
+Route::get('/test3','PrakerinController@makanan');
+Route::get('/test4','PrakerinController@pakaian');
+Route::get('/test5','PrakerinController@musim');
+Route::get('/test6','PrakerinController@olahraga');
