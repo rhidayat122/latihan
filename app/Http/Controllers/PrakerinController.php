@@ -83,7 +83,10 @@ class PrakerinController extends Controller
 
 	public function parameter($a)
 	{
+
+		if ($a="binatang") {
 		return view('welcome2', compact('a'));
+	}
 	}
 }
 
