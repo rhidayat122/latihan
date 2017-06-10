@@ -19,9 +19,16 @@ class SepakbolaController extends Controller
     	return $b;
     }
 
+    public function test3($id)
+    {
+        
+        $c = sepakbola::where('club','like','%'.$id.'%')-> ORwhere('nama','like','%'.$id.'%')->get();
+        return $c;
+    }
+
     public function index()
     {
-    	$id = sepakbola::all();
+    	$tampilan = sepakbola::all();
     	return view('index2', compact('tampilan'));
     }
 
@@ -46,4 +53,5 @@ class SepakbolaController extends Controller
          return view('mamat.binatang',compact('aah'));
 
     }
+
 }

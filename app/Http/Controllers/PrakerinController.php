@@ -74,7 +74,7 @@ class PrakerinController extends Controller
 		return view('olahraga', compact('pi', 'bu', 're', 'at', 'la'));
 	}
 
-	public function param($id)
+	public function param2($id)
 	{
 
 		$a = produk::find('id');
@@ -88,6 +88,26 @@ class PrakerinController extends Controller
 		return view('welcome2', compact('a'));
 	}
 	}
+
+	public function param($pilih,$jenis=null)
+    {
+        $campur = ['binatang'=>['kucing'=>['Persia','Garong','Anggora'],
+                                'burung'=>['piit','japati','puyuh'],
+                                'ikan'=>['Sepat','Tuna','Hiu']],
+                   'komputer'=>['Asus'=>['Laptop','pc','smartphone'],
+                                'Dell'=>['Laptop','Pad','Monitor'],
+                                'Toshiba'=>['Laptop','Monitor','Pc']],
+                   'buah'=>['Mangga'=>['lokal','campur','import'],'Jeruk'=>['bangkok','lokal','sopak'],'Apel'=>['tokyo','indo','malang'] ]];
+        if ($pilih){
+        $baru=(array_keys($campur[$pilih]));
+                   }
+        if ($jenis){
+        $baru=($campur[$pilih][$jenis]);
+                   }
+         return view('all',compact('baru','pilih','jenis'));
+         
+
+    }
 }
 
 

@@ -47,12 +47,13 @@ Route::get('/pengaturan', function(){
 
 Route::get('test1','SepakbolaController@test');
 Route::get('test/{id}','SepakbolaController@test2');
+Route::get('test3/{id}','SepakbolaController@test3');
 
-
+//Route::get('/{pilih?}/{jenis?}','PrakerinController@param');
 //latihan Controller
 //controller digunakan sebagai pengatur alur program
 
-Route::get('/{a}', 'SepakbolaController@param');
+// Route::get('/{a}', 'SepakbolaController@param');
 
 // Route::get('','SepakbolaController@ulang');
 // Route::get('/test2','PrakerinController@sepakbola');
@@ -60,3 +61,5 @@ Route::get('/{a}', 'SepakbolaController@param');
 // Route::get('/test4','PrakerinController@pakaian');
 // Route::get('/test5','PrakerinController@musim');
 // Route::get('/test6','PrakerinController@olahraga');
+
+Route::resource('post','PostController');

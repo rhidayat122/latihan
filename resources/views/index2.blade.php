@@ -13,11 +13,15 @@
 		<td>Umur</td>
 		<td>Negara</td>
 	</tr>
-
+@foreach ($tampilan as  $data)
 	<tr>
-		<td>{{ $id }}</td>
-		<td>{{ $nama }}</td>
-	</tr>
+		<td>{{ $data->id }}</td>
+		<td>{{ $data->nama }}</td>
+		<td>{{ $data->club }}</td>
+		<td>{{ $data->umur }}</td>
+		<td>{{ $data->negara }}</td>
+		</tr>
+		@endforeach
 </table>
 </body>
 </html>
